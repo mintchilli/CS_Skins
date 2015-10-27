@@ -26,5 +26,15 @@ namespace CS_SKINS_ASP.Controllers
 
             return View();
         }
+
+        public ActionResult Forums()
+        {
+            return View();
+        }
+
+        public ActionResult Membres()
+        {
+            return View();
+        }
     }
 }
