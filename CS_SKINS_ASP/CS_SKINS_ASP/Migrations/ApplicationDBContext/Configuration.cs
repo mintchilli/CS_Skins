@@ -92,59 +92,57 @@ namespace CS_SKINS_ASP.Migrations.ApplicationDBContext
                 {
                     Email = "admin@clubinfosth.ca",
                     UserName = "admin@clubinfosth.ca",
-                    PasswordHash = pass.HashPassword("admin"),
+                    PasswordHash = pass.HashPassword("Admin1!"),
                     SecurityStamp = Guid.NewGuid().ToString(),
-                    //details = new AspNetUserInfoSup()
-                    //{
-                    //    Prenom = "Yves", Nom = "Bloduc",
-                    //    DateInscription = DateTime.Now,
-                    //    IdentifiantCSSKINS = "0000001"
-                    //}
+                    details = new AspNetUserInfoSup()
+                    {
+                        Prenom = "Yves", Nom = "Bloduc",
+                        DateInscription = DateTime.Now
+                    }
                 },
 
                 new ApplicationUser
                 {
                     Email = "utilisateur@clubinfosth.ca",
                     UserName = "utilisateur@clubinfosth.ca",
-                    PasswordHash = pass.HashPassword("utilisateur"),
+                    PasswordHash = pass.HashPassword("Utilisateur1!"),
                     SecurityStamp = Guid.NewGuid().ToString(),
-                    //details = new AspNetUserInfoSup()
-                    //{
-                    //    Prenom = "Marc", Nom = "Laforest",
-                    //    DateInscription = DateTime.Now,
-                    //    IdentifiantCSSKINS = "0000002"
-                    //}
+                    details = new AspNetUserInfoSup()
+                    {
+                        Prenom = "Marc", Nom = "Laforest",
+                        DateInscription = DateTime.Now
+                    }
                 },
 
                 new ApplicationUser
                 {
                     Email = "moderateur@clubinfosth.ca",
                     UserName = "moderateur@clubinfosth.ca",
-                    PasswordHash = pass.HashPassword("moderateur"),
+                    PasswordHash = pass.HashPassword("Moderateur1!"),
                     SecurityStamp = Guid.NewGuid().ToString(),
-                    //details = new AspNetUserInfoSup()
-                    //{
-                    //    Prenom = "Nicolas", Nom = "Bourdage",
-                    //    DateInscription = DateTime.Now,
-                    //    IdentifiantCSSKINS = "0000003"
-                    //}
+                    details = new AspNetUserInfoSup()
+                    {
+                        Prenom = "Nicolas", Nom = "Bourdage",
+                        DateInscription = DateTime.Now
+                    }
                 },
 
                 new ApplicationUser
                 {
                     Email = "exclus@clubinfosth.ca",
                     UserName = "exclus@clubinfosth.ca",
-                    PasswordHash = pass.HashPassword("exclus"),
+                    PasswordHash = pass.HashPassword("Exclus1!"),
                     SecurityStamp = Guid.NewGuid().ToString(),
-                    //details = new AspNetUserInfoSup()
-                    //{
-                    //    Prenom = "Sebastien", Nom = "Gagnon",
-                    //    DateInscription = DateTime.Now,
-                    //    IdentifiantCSSKINS = "0000004"
-                    //}
+                    details = new AspNetUserInfoSup()
+                    {
+                        Prenom = "Sebastien", Nom = "Gagnon",
+                        DateInscription = DateTime.Now
+                    }
                 }
             };
 
+            foreach (ApplicationUser u in users)
+                u.details.ID = u.Id;
             context.Users.AddOrUpdate(u => u.UserName, users);
             context.SaveChanges();
         }

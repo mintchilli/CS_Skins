@@ -26,7 +26,12 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Forums","Forums", "Home")</li>
-                    <li>@Html.ActionLink("Membres","Membres","Home")</li>
+                    @{
+                        if (User.IsInRole("Administrateur"))
+                        {
+                            <li>@Html.ActionLink("Membres", "Membres", "Home")</li>
+                        }
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

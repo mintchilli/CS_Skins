@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -187,6 +188,14 @@
     <Compile Include="Migrations\201510300607479_PostsEtSujets.cs" />
     <Compile Include="Migrations\201510300607479_PostsEtSujets.Designer.cs">
       <DependentUpon>201510300607479_PostsEtSujets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510301454561_TBLAspNetUserInfoSup.cs" />
+    <Compile Include="Migrations\201510301454561_TBLAspNetUserInfoSup.Designer.cs">
+      <DependentUpon>201510301454561_TBLAspNetUserInfoSup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.cs" />
+    <Compile Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.Designer.cs">
+      <DependentUpon>201510301510291_ImageDansAspNetUserInfoSup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.cs" />
     <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.Designer.cs">
@@ -283,6 +292,11 @@
     <Content Include="Views\Posts\Details.cshtml" />
     <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
+    <Content Include="Views\ApplicationUsers\Create.cshtml" />
+    <Content Include="Views\ApplicationUsers\Delete.cshtml" />
+    <Content Include="Views\ApplicationUsers\Details.cshtml" />
+    <Content Include="Views\ApplicationUsers\Edit.cshtml" />
+    <Content Include="Views\ApplicationUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,6 +318,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510300607479_PostsEtSujets.resx">
       <DependentUpon>201510300607479_PostsEtSujets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510301454561_TBLAspNetUserInfoSup.resx">
+      <DependentUpon>201510301454561_TBLAspNetUserInfoSup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.resx">
+      <DependentUpon>201510301510291_ImageDansAspNetUserInfoSup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.resx">
       <DependentUpon>201510300126025_Initialisation.cs</DependentUpon>

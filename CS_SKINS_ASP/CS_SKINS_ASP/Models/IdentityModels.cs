@@ -10,8 +10,6 @@ namespace CS_SKINS_ASP.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        //[ForeignKey("Id")]
-        public virtual AspNetUserInfoSup details { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -19,6 +17,11 @@ namespace CS_SKINS_ASP.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string AspNetUserId { get; set; }
+        [ForeignKey("AspNetUserId")]
+        public virtual AspNetUserInfoSup details { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -37,5 +40,7 @@ namespace CS_SKINS_ASP.Models
         {
             return new ApplicationDbContext();
         }
+
+        //public System.Data.Entity.DbSet<CS_SKINS_ASP.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
