@@ -1,0 +1,74 @@
+﻿@model CS_SKINS_ASP.Models.Sujet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sujet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatePublication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatePublication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDernierPost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDernierPost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Auteur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auteur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dernier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dernier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePosts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePosts)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
