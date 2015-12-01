@@ -12,19 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Titre)
+            @Html.DisplayNameFor(model => model.SujetId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Titre)
+            @Html.DisplayFor(model => model.SujetId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Message)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.Message)
         </dd>
 
         <dt>
@@ -43,22 +43,6 @@
             @Html.DisplayFor(model => model.Auteur)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Dernier)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dernier)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NombrePosts)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NombrePosts)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
@@ -66,7 +50,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to List", "Index", new { id = Convert.ToInt32(HttpContext.Current.Request.Cookies.Get("some_cookie_name").Value) })
         </div>
     }
 </div>

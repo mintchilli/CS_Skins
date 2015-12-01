@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CS_SKINS_ASP.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CS_SKINS_ASP.Controllers
 {
@@ -21,6 +22,7 @@ namespace CS_SKINS_ASP.Controllers
         }
 
         // GET: Sujets/Details/5
+        [Authorize(Roles = "Administrateur")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,20 +38,23 @@ namespace CS_SKINS_ASP.Controllers
         }
 
         // GET: Sujets/Create
+        [Authorize(Roles = "Administrateur")]
         public ActionResult Create()
         {
             return View();
         }
 
         // POST: Sujets/Create
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Titre,Description,DatePublication,DateDernierPost,Auteur,Dernier,NombrePosts")] Sujet sujet)
         {
             if (ModelState.IsValid)
             {
+                sujet.Auteur = db.Users.Find(User.Identity.GetUserId()).UserName;
+                //sujet.Dernier = db.Users.Find()
                 db.Sujet.Add(sujet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,6 +64,7 @@ namespace CS_SKINS_ASP.Controllers
         }
 
         // GET: Sujets/Edit/5
+        [Authorize(Roles = "Administrateur")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,8 +80,8 @@ namespace CS_SKINS_ASP.Controllers
         }
 
         // POST: Sujets/Edit/5
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Titre,Description,DatePublication,DateDernierPost,Auteur,Dernier,NombrePosts")] Sujet sujet)
@@ -90,6 +96,7 @@ namespace CS_SKINS_ASP.Controllers
         }
 
         // GET: Sujets/Delete/5
+        [Authorize(Roles = "Administrateur")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

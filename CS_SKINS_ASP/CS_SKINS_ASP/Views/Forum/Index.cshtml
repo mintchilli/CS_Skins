@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CS_SKINS_ASP.Models.Sujet>
+﻿@model IEnumerable<CS_SKINS_ASP.Models.ForumViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Dernier)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NombrePosts)
+            @Html.DisplayNameFor(model => model.NbrPublications)
         </th>
         <th></th>
     </tr>
@@ -44,17 +44,15 @@
             @Html.DisplayFor(modelItem => item.Dernier)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NombrePosts)
+            @Html.DisplayFor(modelItem => item.NbrPublications)
         </td>
         <td>
             @if (User.IsInRole("Administrateur"))
             {
-              <p>  @Html.ActionLink("Edit", "Edit", new { id = item.Id })<br />
-                @Html.ActionLink("Details", "Details", new { id = item.Id })<br />
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })<br />
-            </p>
+                Html.ActionLink("Edit", "Edit", new { id = item.Id });
+                Html.ActionLink("Details", "Details", new { id = item.Id });
+                Html.ActionLink("Delete", "Delete", new { id = item.Id });
             }
-            @Html.ActionLink("voir les posts", "Index", "Posts", new {id = item.Id }, new { id = item.Id })
         </td>
     </tr>
 }

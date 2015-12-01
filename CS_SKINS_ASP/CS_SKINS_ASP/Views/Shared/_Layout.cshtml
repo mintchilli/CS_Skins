@@ -25,11 +25,20 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Forums","Forums", "Home")</li>
+                    <li>@Html.ActionLink("Forums", "Index", "Sujets")</li>
                     @{
                         if (User.IsInRole("Administrateur"))
                         {
-                            <li>@Html.ActionLink("Membres", "Membres", "Home")</li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                    Membres
+                                    <span class="caret"></span>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Membres", "Index", "ApplicationUsers")</li>
+                                        <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                                    </ul>
+                                </a>
+                            </li>
                         }
                     }
                 </ul>

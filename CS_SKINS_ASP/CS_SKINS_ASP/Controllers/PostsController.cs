@@ -15,9 +15,18 @@ namespace CS_SKINS_ASP.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index()
+        public ActionResult Index(int id = 0)
         {
-            return View(db.Posts.ToList());
+            if (HttpContext.Request.Cookies["some_cookie_name"] == null)
+            {
+                HttpCookie cookie = new HttpCookie("some_cookie_name");
+                cookie.Value = id.ToString();
+                HttpContext.Response.Cookies.Remove("some_cookie_name");
+                HttpContext.Response.SetCookie(cookie);
+            }
+
+            int bel = Convert.ToInt32(HttpContext.Request.Cookies.Get("some_cookie_name").Value);
+            return View(db.Posts.Where(c => c.SujetId == bel).ToList());
         }
 
         // GET: Posts/Details/5
@@ -42,14 +51,19 @@ namespace CS_SKINS_ASP.Controllers
         }
 
         // POST: Posts/Create
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Titre,Description,DatePublication,Auteur,Dernier,NombrePosts")] Posts posts)
+        public ActionResult Create([Bind(Include = "Id,SujetId,Message,DatePublication,Auteur")] Posts posts)
         {
             if (ModelState.IsValid)
             {
+
+                posts.Auteur = User.Identity.Name;
+                posts.DatePublication = DateTime.Now;
+                int Cid = Convert.ToInt32(HttpContext.Request.Cookies.Get("some_cookie_name").Value);
+                posts.SujetId = Cid;
                 db.Posts.Add(posts);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -74,11 +88,11 @@ namespace CS_SKINS_ASP.Controllers
         }
 
         // POST: Posts/Edit/5
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Titre,Description,DatePublication,Auteur,Dernier,NombrePosts")] Posts posts)
+        public ActionResult Edit([Bind(Include = "Id,SujetId,Message,DatePublication,Auteur")] Posts posts)
         {
             if (ModelState.IsValid)
             {

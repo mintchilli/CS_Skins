@@ -10,11 +10,10 @@ namespace CS_SKINS_ASP.Models
         public int Id { get; set; }
         public string Titre { get; set; }
         public string Description { get; set; }
-        public DateTime DatePublication { get; set; }
-        public DateTime DateDernierPost { get; set; }
         public string Auteur { get; set; }
         public string Dernier { get; set; }
         public string NombrePosts { get; set; }
+        public virtual ICollection<Posts> Posts { get; set; }
 
     }
 }

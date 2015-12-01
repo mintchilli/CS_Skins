@@ -173,6 +173,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SujetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,6 +197,22 @@
     <Compile Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.cs" />
     <Compile Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.Designer.cs">
       <DependentUpon>201510301510291_ImageDansAspNetUserInfoSup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510301723489_clean de la db.cs" />
+    <Compile Include="Migrations\201510301723489_clean de la db.Designer.cs">
+      <DependentUpon>201510301723489_clean de la db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510301733283_suppresion de lignes dans sujet.cs" />
+    <Compile Include="Migrations\201510301733283_suppresion de lignes dans sujet.Designer.cs">
+      <DependentUpon>201510301733283_suppresion de lignes dans sujet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511051627227_Post_Sujet_mod.cs" />
+    <Compile Include="Migrations\201511051627227_Post_Sujet_mod.Designer.cs">
+      <DependentUpon>201511051627227_Post_Sujet_mod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511061736384_MergeProjets.cs" />
+    <Compile Include="Migrations\201511061736384_MergeProjets.Designer.cs">
+      <DependentUpon>201511061736384_MergeProjets.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.cs" />
     <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.Designer.cs">
@@ -231,6 +248,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\TP-Serveur.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -287,16 +305,25 @@
     <Content Include="Views\Sujets\Details.cshtml" />
     <Content Include="Views\Sujets\Edit.cshtml" />
     <Content Include="Views\Sujets\Index.cshtml" />
-    <Content Include="Views\Posts\Create.cshtml" />
-    <Content Include="Views\Posts\Delete.cshtml" />
-    <Content Include="Views\Posts\Details.cshtml" />
-    <Content Include="Views\Posts\Edit.cshtml" />
-    <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\ApplicationUsers\Create.cshtml" />
     <Content Include="Views\ApplicationUsers\Delete.cshtml" />
     <Content Include="Views\ApplicationUsers\Details.cshtml" />
     <Content Include="Views\ApplicationUsers\Edit.cshtml" />
     <Content Include="Views\ApplicationUsers\Index.cshtml" />
+    <Content Include="Views\Forum\Create.cshtml" />
+    <Content Include="Views\Forum\Delete.cshtml" />
+    <Content Include="Views\Forum\Details.cshtml" />
+    <Content Include="Views\Forum\Edit.cshtml" />
+    <Content Include="Views\Forum\Index.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Posts\Create.cshtml" />
+    <Content Include="Views\Posts\Delete.cshtml" />
+    <Content Include="Views\Posts\Details.cshtml" />
+    <Content Include="Views\Posts\Edit.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\ManageUserRoles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -324,6 +351,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.resx">
       <DependentUpon>201510301510291_ImageDansAspNetUserInfoSup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510301723489_clean de la db.resx">
+      <DependentUpon>201510301723489_clean de la db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510301733283_suppresion de lignes dans sujet.resx">
+      <DependentUpon>201510301733283_suppresion de lignes dans sujet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511051627227_Post_Sujet_mod.resx">
+      <DependentUpon>201511051627227_Post_Sujet_mod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511061736384_MergeProjets.resx">
+      <DependentUpon>201511061736384_MergeProjets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.resx">
       <DependentUpon>201510300126025_Initialisation.cs</DependentUpon>

@@ -12,8 +12,8 @@ namespace CS_SKINS_ASP.Migrations.ApplicationDBContext
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            //MigrationsDirectory = @"Migrations\ApplicationDBContext";
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(CS_SKINS_ASP.Models.ApplicationDbContext context)
@@ -34,7 +34,31 @@ namespace CS_SKINS_ASP.Migrations.ApplicationDBContext
             AjouterUsagers(pass, context);
             AjouterRoles(context);
             AjouterUsersRoles(context);
+            AjouterPost(context);
 
+        }
+
+        private void AjouterPost(ApplicationDbContext context)
+        {
+            Posts[] posts =
+            {
+                new Posts()
+                {
+                    Auteur = context.Users.Where(m => m.Email == "admin@clubinfosth.ca").FirstOrDefault().Id,
+                    DatePublication = DateTime.Now,
+                    Message = "test1",
+                    SujetId = 5
+                },
+                new Posts()
+                {
+                    Auteur = context.Users.Where(m => m.Email == "admin@clubinfosth.ca").FirstOrDefault().Id,
+                    DatePublication = DateTime.Now,
+                    Message = "test2",
+                    SujetId = 5
+                }
+            };
+            context.Posts.AddOrUpdate(r => r.Id, posts);
+            context.SaveChanges();
         }
 
         private void AjouterUsersRoles(ApplicationDbContext context)
@@ -143,6 +167,7 @@ namespace CS_SKINS_ASP.Migrations.ApplicationDBContext
 
             foreach (ApplicationUser u in users)
                 u.details.ID = u.Id;
+
             context.Users.AddOrUpdate(u => u.UserName, users);
             context.SaveChanges();
         }

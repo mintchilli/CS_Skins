@@ -40,7 +40,6 @@ namespace CS_SKINS_ASP.Models
         {
             return new ApplicationDbContext();
         }
-
         //public System.Data.Entity.DbSet<CS_SKINS_ASP.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

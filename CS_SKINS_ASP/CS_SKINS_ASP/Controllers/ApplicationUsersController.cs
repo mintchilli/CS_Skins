@@ -20,6 +20,11 @@ namespace CS_SKINS_ASP.Controllers
             var applicationUsers = db.Users.Include(a => a.details);
             return View(applicationUsers.ToList());
         }
+        public ActionResult IndexRoles()
+        {
+            var applicationRoles = db.Roles.Include(a => a.Name);
+            return View(applicationRoles.ToList());
+        }
 
         // GET: ApplicationUsers/Details/5
         public ActionResult Details(string id)

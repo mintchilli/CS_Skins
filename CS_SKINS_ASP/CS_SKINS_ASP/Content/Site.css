@@ -74,3 +74,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#titre {
+     padding-top: 30px;
+     padding-left: 50px;
+}
+
+#cadreIndex {
+
+}
