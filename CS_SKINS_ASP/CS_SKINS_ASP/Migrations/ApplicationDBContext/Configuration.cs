@@ -170,6 +170,7 @@ namespace CS_SKINS_ASP.Migrations.ApplicationDBContext
 
             context.Users.AddOrUpdate(u => u.UserName, users);
             context.SaveChanges();
+
         }
     }
 }
