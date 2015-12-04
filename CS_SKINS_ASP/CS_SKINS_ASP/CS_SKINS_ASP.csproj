@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201512022339062_ajoutTableSkins.Designer.cs">
       <DependentUpon>201512022339062_ajoutTableSkins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512041544037_ajoutImageSkins.cs" />
+    <Compile Include="Migrations\201512041544037_ajoutImageSkins.Designer.cs">
+      <DependentUpon>201512041544037_ajoutImageSkins.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.cs" />
     <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.Designer.cs">
       <DependentUpon>201510300126025_Initialisation.cs</DependentUpon>
@@ -398,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512022339062_ajoutTableSkins.resx">
       <DependentUpon>201512022339062_ajoutTableSkins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512041544037_ajoutImageSkins.resx">
+      <DependentUpon>201512041544037_ajoutImageSkins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.resx">
       <DependentUpon>201510300126025_Initialisation.cs</DependentUpon>

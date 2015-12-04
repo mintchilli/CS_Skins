@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CS_SKINS_ASP.Models;
+using System.IO;
 
 namespace CS_SKINS_ASP.Controllers
 {
@@ -15,18 +16,14 @@ namespace CS_SKINS_ASP.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Skins
-        public ActionResult Index(int id = 0)
+        public ActionResult Index(int? id)
         {
-            if (HttpContext.Request.Cookies["cookie_skins"] == null)
-            {
                 HttpCookie cookie = new HttpCookie("cookie_skins");
                 cookie.Value = id.ToString();
                 HttpContext.Response.Cookies.Remove("cookie_skins");
                 HttpContext.Response.SetCookie(cookie);
-            }
-            int IDCook = Convert.ToInt32(HttpContext.Request.Cookies.Get("cookie_skins").Value);
 
-            return View(db.Skins.Where(c=> c.CrateId == IDCook).ToList());
+            return View(db.Skins.Where(c=> c.CrateId == id).ToList());
         }
 
         // GET: Skins/Details/5
@@ -55,10 +52,15 @@ namespace CS_SKINS_ASP.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Prix,Probabilité,Rang")] Skins skins)
+        public ActionResult Create([Bind(Include = "ID,CrateId,Prix,Probabilité,Rang,Fichier")] Skins skins)
         {
             if (ModelState.IsValid)
             {
+                skins.ImageNom = Path.GetFileName(skins.Fichier.FileName);
+                skins.ImageTaille = skins.Fichier.ContentLength;
+                skins.ImageType = skins.Fichier.ContentType;
+                skins.ImageData = new byte[skins.ImageTaille];
+                skins.Fichier.InputStream.Read(skins.ImageData, 0, skins.ImageTaille);
                 int cookieId = Convert.ToInt32(HttpContext.Request.Cookies.Get("cookie_skins").Value);
                 skins.CrateId = cookieId;
                 db.Skins.Add(skins);

@@ -15,18 +15,14 @@ namespace CS_SKINS_ASP.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index(int id = 0)
+        public ActionResult Index(int? id)
         {
-            if (HttpContext.Request.Cookies["some_cookie_name"] == null)
-            {
                 HttpCookie cookie = new HttpCookie("some_cookie_name");
                 cookie.Value = id.ToString();
                 HttpContext.Response.Cookies.Remove("some_cookie_name");
                 HttpContext.Response.SetCookie(cookie);
-            }
 
-            int bel = Convert.ToInt32(HttpContext.Request.Cookies.Get("some_cookie_name").Value);
-            return View(db.Posts.Where(c => c.SujetId == bel).ToList());
+            return View(db.Posts.Where(c => c.SujetId == id).ToList());
         }
 
         // GET: Posts/Details/5
