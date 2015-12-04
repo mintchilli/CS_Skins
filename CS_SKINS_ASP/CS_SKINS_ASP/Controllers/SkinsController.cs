@@ -21,7 +21,7 @@ namespace CS_SKINS_ASP.Controllers
             {
                 HttpCookie cookie = new HttpCookie("cookie_skins");
                 cookie.Value = id.ToString();
-                HttpContext.Response.Cookies.Remove("scookie_skins");
+                HttpContext.Response.Cookies.Remove("cookie_skins");
                 HttpContext.Response.SetCookie(cookie);
             }
             int IDCook = Convert.ToInt32(HttpContext.Request.Cookies.Get("cookie_skins").Value);

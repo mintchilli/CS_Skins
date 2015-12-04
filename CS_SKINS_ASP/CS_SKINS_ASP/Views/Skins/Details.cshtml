@@ -4,39 +4,41 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="couche">
+    <h2>Details</h2>
 
-<div>
-    <h4>Skins</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Prix)
-        </dt>
+    <div>
+        <h4>Skins</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Prix)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Prix)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Prix)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Probabilité)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Probabilité)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Probabilité)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Probabilité)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Rang)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rang)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rang)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Rang)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
