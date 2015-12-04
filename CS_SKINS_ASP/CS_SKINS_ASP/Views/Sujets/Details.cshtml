@@ -3,55 +3,57 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="couche textfont">
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>Sujet</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Titre)
-        </dt>
+    <div>
+        <h4>Sujet</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Titre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Titre)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Titre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Auteur)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Auteur)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Auteur)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Auteur)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Dernier)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Dernier)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Dernier)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Dernier)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NombrePosts)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.NombrePosts)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NombrePosts)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.NombrePosts)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
