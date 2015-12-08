@@ -180,61 +180,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510300259357_Initialisation1.cs" />
-    <Compile Include="Migrations\201510300259357_Initialisation1.Designer.cs">
-      <DependentUpon>201510300259357_Initialisation1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510300449373_NettoyerMigrations.cs" />
-    <Compile Include="Migrations\201510300449373_NettoyerMigrations.Designer.cs">
-      <DependentUpon>201510300449373_NettoyerMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510300607479_PostsEtSujets.cs" />
-    <Compile Include="Migrations\201510300607479_PostsEtSujets.Designer.cs">
-      <DependentUpon>201510300607479_PostsEtSujets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510301454561_TBLAspNetUserInfoSup.cs" />
-    <Compile Include="Migrations\201510301454561_TBLAspNetUserInfoSup.Designer.cs">
-      <DependentUpon>201510301454561_TBLAspNetUserInfoSup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.cs" />
-    <Compile Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.Designer.cs">
-      <DependentUpon>201510301510291_ImageDansAspNetUserInfoSup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510301723489_clean de la db.cs" />
-    <Compile Include="Migrations\201510301723489_clean de la db.Designer.cs">
-      <DependentUpon>201510301723489_clean de la db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510301733283_suppresion de lignes dans sujet.cs" />
-    <Compile Include="Migrations\201510301733283_suppresion de lignes dans sujet.Designer.cs">
-      <DependentUpon>201510301733283_suppresion de lignes dans sujet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511051627227_Post_Sujet_mod.cs" />
-    <Compile Include="Migrations\201511051627227_Post_Sujet_mod.Designer.cs">
-      <DependentUpon>201511051627227_Post_Sujet_mod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511061736384_MergeProjets.cs" />
-    <Compile Include="Migrations\201511061736384_MergeProjets.Designer.cs">
-      <DependentUpon>201511061736384_MergeProjets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512011424239_bleh.cs" />
-    <Compile Include="Migrations\201512011424239_bleh.Designer.cs">
-      <DependentUpon>201512011424239_bleh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512022246016_ajoutdecrates.cs" />
-    <Compile Include="Migrations\201512022246016_ajoutdecrates.Designer.cs">
-      <DependentUpon>201512022246016_ajoutdecrates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512022339062_ajoutTableSkins.cs" />
-    <Compile Include="Migrations\201512022339062_ajoutTableSkins.Designer.cs">
-      <DependentUpon>201512022339062_ajoutTableSkins.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512041544037_ajoutImageSkins.cs" />
-    <Compile Include="Migrations\201512041544037_ajoutImageSkins.Designer.cs">
-      <DependentUpon>201512041544037_ajoutImageSkins.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.cs" />
-    <Compile Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.Designer.cs">
-      <DependentUpon>201510300126025_Initialisation.cs</DependentUpon>
+    <Compile Include="Migrations\201512081439570_Reset.cs" />
+    <Compile Include="Migrations\201512081439570_Reset.Designer.cs">
+      <DependentUpon>201512081439570_Reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -324,7 +272,6 @@
     <Content Include="Views\Sujets\Delete.cshtml" />
     <Content Include="Views\Sujets\Details.cshtml" />
     <Content Include="Views\Sujets\Edit.cshtml" />
-    <Content Include="Views\Sujets\Index.cshtml" />
     <Content Include="Views\ApplicationUsers\Create.cshtml" />
     <Content Include="Views\ApplicationUsers\Delete.cshtml" />
     <Content Include="Views\ApplicationUsers\Details.cshtml" />
@@ -354,6 +301,7 @@
     <Content Include="Views\Skins\Details.cshtml" />
     <Content Include="Views\Skins\Edit.cshtml" />
     <Content Include="Views\Skins\Index.cshtml" />
+    <Content Include="Views\Sujets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,47 +315,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510300259357_Initialisation1.resx">
-      <DependentUpon>201510300259357_Initialisation1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510300449373_NettoyerMigrations.resx">
-      <DependentUpon>201510300449373_NettoyerMigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510300607479_PostsEtSujets.resx">
-      <DependentUpon>201510300607479_PostsEtSujets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510301454561_TBLAspNetUserInfoSup.resx">
-      <DependentUpon>201510301454561_TBLAspNetUserInfoSup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510301510291_ImageDansAspNetUserInfoSup.resx">
-      <DependentUpon>201510301510291_ImageDansAspNetUserInfoSup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510301723489_clean de la db.resx">
-      <DependentUpon>201510301723489_clean de la db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510301733283_suppresion de lignes dans sujet.resx">
-      <DependentUpon>201510301733283_suppresion de lignes dans sujet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511051627227_Post_Sujet_mod.resx">
-      <DependentUpon>201511051627227_Post_Sujet_mod.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511061736384_MergeProjets.resx">
-      <DependentUpon>201511061736384_MergeProjets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512011424239_bleh.resx">
-      <DependentUpon>201512011424239_bleh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512022246016_ajoutdecrates.resx">
-      <DependentUpon>201512022246016_ajoutdecrates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512022339062_ajoutTableSkins.resx">
-      <DependentUpon>201512022339062_ajoutTableSkins.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512041544037_ajoutImageSkins.resx">
-      <DependentUpon>201512041544037_ajoutImageSkins.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ApplicationDBContext\201510300126025_Initialisation.resx">
-      <DependentUpon>201510300126025_Initialisation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512081439570_Reset.resx">
+      <DependentUpon>201512081439570_Reset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

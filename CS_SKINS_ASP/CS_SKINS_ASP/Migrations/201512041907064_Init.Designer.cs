@@ -7,13 +7,13 @@ namespace CS_SKINS_ASP.Migrations.ApplicationDBContext
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class PostsEtSujets : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PostsEtSujets));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510300607479_PostsEtSujets"; }
+            get { return "201512041907064_Init"; }
         }
         
         string IMigrationMetadata.Source
