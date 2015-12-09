@@ -1,6 +1,6 @@
 ﻿@{
-    ViewBag.Title = "A propos";
-    ViewBag.Message = "Un site tellement utile";
+    ViewBag.Title = CS_SKINS_ASP.Views.Home.ResourceHome.Titreapropo;
+    ViewBag.Message = CS_SKINS_ASP.Views.Home.ResourceHome.TitreUtile;
 }
 
 <div class="couche textfont text-center">
@@ -8,18 +8,17 @@
     <h3>@ViewBag.Message</h3>
 
     <p>
-        Chez CS:SK, nous offrons la possibillité de visualiser toutes les skins de Counter Strike : Global Offensive, ainsi que leurs prix moyens sur
-        le marché en ce moment
+        @CS_SKINS_ASP.Views.Home.ResourceHome.ParOpportunite
     </p>
-    <h3>Les créateurs:</h3>
+    <h3>@CS_SKINS_ASP.Views.Home.ResourceHome.TitreCreateur</h3>
     <p>
-        Francois Brisson : joueur compétitif de CS : GO, il a participé dans plusieurs tournois. Rang : Global Elite
-    </p>
-    <p>
-        Marcel Michel : expert de CS : GO, il a  participé a plusieurs tournois en tant qu'organisateur et préposé a la logistique.
+        @CS_SKINS_ASP.Views.Home.ResourceHome.ParCreateurF
     </p>
     <p>
-        Ensemble, nous avons collaboré pour offrir une vue globale sur un point indispensable de CS : GO, les retexture, ou comme on dit, les skins!
+        @CS_SKINS_ASP.Views.Home.ResourceHome.ParCreateurM
+    </p>
+    <p>
+        @CS_SKINS_ASP.Views.Home.ResourceHome.ParFinal
     </p>
     <br />
 </div>

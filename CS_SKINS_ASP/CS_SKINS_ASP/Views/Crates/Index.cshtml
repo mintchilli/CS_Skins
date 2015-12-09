@@ -10,7 +10,7 @@
     @if (User.IsInRole("Administrateur"))
     {
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.CreerSujet, "Create")
         </p>
     }
     <table class="table">
@@ -45,12 +45,12 @@
                     @if (User.IsInRole("Administrateur"))
                 {
                         <p>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                            @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Edit, "Edit", new { id = item.ID }) |
+                            @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Details, "Details", new { id = item.ID }) |
+                            @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Delete, "Delete", new { id = item.ID })
                         </p>
                     }
-                    @Html.ActionLink("voir les skins", "Index", "Skins", new { id = item.ID }, new { id = item.ID })
+                    @Html.ActionLink(CS_SKINS_ASP.Views.Crates.ResourceCrate.VoirSkins, "Index", "Skins", new { id = item.ID }, new { id = item.ID })
                 </td>
             </tr>
                         }

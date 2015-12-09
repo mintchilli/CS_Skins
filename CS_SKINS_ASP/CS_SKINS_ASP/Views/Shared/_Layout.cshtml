@@ -21,11 +21,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Forums", "Index", "Sujets")</li>
-                    <li>@Html.ActionLink("Boites","Index","Crates")</li>
+                    <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Home, "Index", "Home")</li>
+                    <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Apropos, "About", "Home")</li>
+                    <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Contact, "Contact", "Home")</li>
+                    <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Forum, "Index", "Sujets")</li>
+                    <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Boites,"Index","Crates")</li>
                     @{
                         if (User.IsInRole("Administrateur"))
                         {
@@ -34,8 +34,8 @@
                                     Membres
                                     <span class="caret"></span>
                                     <ul class="dropdown-menu">
-                                        <li>@Html.ActionLink("Membres", "Index", "ApplicationUsers")</li>
-                                        <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                                        <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Membre, "Index", "ApplicationUsers")</li>
+                                        <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Roles, "Index", "Roles")</li>
                                     </ul>
                                 </a>
                             </li>
@@ -55,6 +55,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Lang")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -26,6 +26,8 @@ namespace CS_SKINS_ASP
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/Lang").Include(
+                "~/Scripts/Lang.js"));
         }
     }
 }
