@@ -44,6 +44,8 @@ namespace CS_SKINS_ASP.Models
         public System.Data.Entity.DbSet<CS_SKINS_ASP.Models.Crate> Crates { get; set; }
 
         public System.Data.Entity.DbSet<CS_SKINS_ASP.Models.Skins> Skins { get; set; }
+
+        public System.Data.Entity.DbSet<CS_SKINS_ASP.Models.Ventes> Ventes { get; set; }
         //public System.Data.Entity.DbSet<CS_SKINS_ASP.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

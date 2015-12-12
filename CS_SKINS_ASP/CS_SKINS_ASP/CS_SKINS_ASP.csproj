@@ -49,6 +49,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -177,12 +185,21 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SkinsController.cs" />
     <Compile Include="Controllers\SujetsController.cs" />
+    <Compile Include="Controllers\VentesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201512081439570_Reset.cs" />
     <Compile Include="Migrations\201512081439570_Reset.Designer.cs">
       <DependentUpon>201512081439570_Reset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512111359443_Venteskins.cs" />
+    <Compile Include="Migrations\201512111359443_Venteskins.Designer.cs">
+      <DependentUpon>201512111359443_Venteskins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512120334215_UpdateVente.cs" />
+    <Compile Include="Migrations\201512120334215_UpdateVente.Designer.cs">
+      <DependentUpon>201512120334215_UpdateVente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -194,6 +211,7 @@
     <Compile Include="Models\Posts.cs" />
     <Compile Include="Models\Skins.cs" />
     <Compile Include="Models\Sujet.cs" />
+    <Compile Include="Models\Ventes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Views\Crates\ResourceCrate.Designer.cs">
@@ -246,6 +264,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceSujet.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Ventes\Resourcevente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resourcevente.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ventes\Resourcevente.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resourcevente.en.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -260,6 +288,7 @@
     <Content Include="Content\Images\Shadow360fx360f.png" />
     <Content Include="Content\Images\Vanguard360fx360f.png" />
     <Content Include="Content\Images\WinterOffensive360fx360f.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -271,6 +300,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -353,6 +384,12 @@
     <Content Include="Views\Skins\Edit.cshtml" />
     <Content Include="Views\Skins\Index.cshtml" />
     <Content Include="Views\Sujets\Index.cshtml" />
+    <Content Include="Views\Ventes\Create.cshtml" />
+    <Content Include="Views\Ventes\Delete.cshtml" />
+    <Content Include="Views\Ventes\Details.cshtml" />
+    <Content Include="Views\Ventes\Edit.cshtml" />
+    <Content Include="Views\Ventes\Index.cshtml" />
+    <Content Include="Views\Ventes\_PartialVentesView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -368,6 +405,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512081439570_Reset.resx">
       <DependentUpon>201512081439570_Reset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512111359443_Venteskins.resx">
+      <DependentUpon>201512111359443_Venteskins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512120334215_UpdateVente.resx">
+      <DependentUpon>201512120334215_UpdateVente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Crates\ResourceCrate.en.resx" />
     <EmbeddedResource Include="Views\Crates\ResourceCrate.resx">
@@ -412,6 +455,14 @@
     <EmbeddedResource Include="Views\Sujets\ResourceSujet.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceSujet.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Ventes\Resourcevente.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resourcevente.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Ventes\Resourcevente.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resourcevente.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

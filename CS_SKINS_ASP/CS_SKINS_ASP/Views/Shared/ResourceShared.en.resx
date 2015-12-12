@@ -150,4 +150,7 @@
   <data name="sinscrire" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="Vente" xml:space="preserve">
+    <value>Sell</value>
+  </data>
 </root>

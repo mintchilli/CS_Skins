@@ -28,6 +28,8 @@ namespace CS_SKINS_ASP
                       "~/Content/Site.css"));
             bundles.Add(new ScriptBundle("~/bundles/Lang").Include(
                 "~/Scripts/Lang.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryajax").Include(
+                "~/Scripts/jquery.unobtrusive*"));
         }
     }
 }

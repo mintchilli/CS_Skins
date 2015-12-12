@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CS_SKINS_ASP.Models.Ventes>
+
+@{
+    ViewBag.Title = "Index";
+
+    var ajaxParam = new AjaxOptions()
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "Liste"
+    };
+}
+
+<div class="couche textfont" id="Liste">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.CreerSujet, "Create")
+    </p>
+
+    @Html.Partial("_PartialVentesView", Model)
+
+    
+</div>

@@ -26,6 +26,7 @@
                     <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Contact, "Contact", "Home")</li>
                     <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Forum, "Index", "Sujets")</li>
                     <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Boites,"Index","Crates")</li>
+                    <li>@Html.ActionLink(CS_SKINS_ASP.Views.Shared.ResourceShared.Vente, "Index", "Ventes")</li>
                     @{
                         if (User.IsInRole("Administrateur"))
                         {
@@ -56,6 +57,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/Lang")
+    @Scripts.Render("~/bundles/jqueryval") 
+    @Scripts.Render("~/bundles/jqueryajax")
     @RenderSection("scripts", required: false)
 </body>
 </html>

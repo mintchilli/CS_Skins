@@ -1,0 +1,128 @@
+﻿@model IEnumerable<CS_SKINS_ASP.Models.Ventes>
+
+@{
+    var ajaxParam = new AjaxOptions()
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "Liste"
+    };
+}
+
+<div id="Liste">
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                @*@Html.ActionLink("Nom", "Index", new { OrdreTri = "Nom" })*@
+                @Ajax.ActionLink("Nom", "Index", new { OrdreTri = "Nom" }, ajaxParam)
+            </th>
+            <th>
+                @*@Html.ActionLink("Catégorie", "Index", new { OrdreTri = "Nom" })*@
+                @Ajax.ActionLink("Prix", "Index", new { OrdreTri = "Nom" }, ajaxParam)
+            </th>
+            <th>
+                @*@Html.ActionLink("Catégorie", "Index", new { OrdreTri = "Nom" })*@
+                @Ajax.ActionLink("ContactInfo", "Index", new { OrdreTri = "Nom" }, ajaxParam)
+            </th>
+            <th>
+                @*@Html.ActionLink("Catégorie", "Index", new { OrdreTri = "Nom" })*@
+                @Ajax.ActionLink("Vendu", "Index", new { OrdreTri = "Nom" }, ajaxParam)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{
+                        string src = "";
+                        src = "data:" + item.ImageType + ";base64," + Convert.ToBase64String(item.ImageData);
+                        <img src="@src" alt="@item.ImageNom" height="125" width="125" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomSkin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prix)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactInfo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendu)
+                </td>
+                <td>
+                    @if (User.IsInRole("Administrateur"))
+                    {
+                        <p>
+                            @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Edit, "Edit", new { id = item.ID }) |
+                            @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Details, "Details", new { id = item.ID }) |
+                            @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Delete, "Delete", new { id = item.ID })
+                        </p>
+                    }
+                </td>
+            </tr>
+                        }
+
+    </table>
+</div>
+@*<table class="table">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomSkin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vendu)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{
+                    string src = "";
+                    src = "data:" + item.ImageType + ";base64," + Convert.ToBase64String(item.ImageData);
+                    <img src="@src" alt="@item.ImageNom" height="125" width="125" />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomSkin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vendu)
+            </td>
+
+            <td>
+                @if (User.IsInRole("Administrateur"))
+                {
+                    <p>
+                        @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Edit, "Edit", new { id = item.ID }) |
+                        @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Details, "Details", new { id = item.ID }) |
+                        @Html.ActionLink(CS_SKINS_ASP.Views.ResourcesCommunes.ResourcesCommunes.Delete, "Delete", new { id = item.ID })
+                    </p>
+                }
+            </td>
+        </tr>
+                    }
+
+</table>*@
